@@ -1,0 +1,16 @@
+{
+    "name": "web-tfg",
+    "version": "1.0.0",
+    "description": "React Web to survey and interact Google, Amazon and Microsoft's vision APIs.",
+    "main": "src/server/index.jsx",
+    "author": "Javier Cuenca Gento",
+    "dependencies": {
+        "express": "^4.17.1",
+        "react-dom": "^16.9.0",
+        "react-hot-loader": "^4.12.11",
+        "react-intl": "^3.1.7",
+        "react-redux": "^7.1.0",
+        "semantic-ui-less": "^2.4.1",
+        "semantic-ui-react": "^0.88.2"
+    }
+}

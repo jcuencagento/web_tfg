@@ -2,9 +2,9 @@ import { PropTypes } from 'prop-types';
 
 const ImageDescriptions = PropTypes.exact({
     image_name: PropTypes.string,
-    AWS_description: PropTypes.string,
-    Google_description: PropTypes.string,
-    Azure_description: PropTypes.string,
+    aws_description: PropTypes.string,
+    google_description: PropTypes.string,
+    azure_description: PropTypes.string,
     option_none: PropTypes.string
 });
 

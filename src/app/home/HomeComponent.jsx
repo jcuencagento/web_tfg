@@ -15,7 +15,7 @@ const HomeComponent = ({ browser, gotoRoute }) => {
         <Grid.Column>
             <Image size={browser ? 'large' : 'medium'} src={logo} centered />
             <Header as="h1" textAlign="center">
-                Comparador de APIs de reconocimiento de imágenes
+                Comparador de APIs de reconocimiento de imágenes!
                 <Header.Subheader>Javier Cuenca Gento UC3M</Header.Subheader>
             </Header>
             <Button onClick={handleOnClick('/survey')}>Empezar encuesta</Button>

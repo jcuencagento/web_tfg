@@ -2,9 +2,9 @@ import { createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions(
     {
-        clean: null
+        errorClear: null
     },
-    { prefix: '@@app/' }
+    { prefix: '@@survey/' }
 );
 
 export { Creators, Types };

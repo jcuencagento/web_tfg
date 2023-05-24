@@ -1,24 +1,22 @@
 import { error } from './logger';
 const translate = require('@vitalets/google-translate-api');
 const AWS = require('aws-sdk');
+const aws_keys = require('../assets/key_aws.json');
+const { ImageAnnotatorClient } = require('@google-cloud/vision');
+const google_credentials = require('../assets/key.json');
 const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
 const { CognitiveServicesCredentials } = require('@azure/ms-rest-azure-js');
 
 //Amazon Web Services
-const aws_access_key_id = 'AKIATXTZYMA46LDSKPEM';
-const aws_secret_access_key = '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';
-const region_name = 'us-east-2';
 AWS.config.update({
-    accessKeyId: aws_access_key_id,
-    secretAccessKey: aws_secret_access_key,
-    region: region_name
+    accessKeyId: aws_keys.aws_access_key_id,
+    secretAccessKey: aws_keys.aws_secret_access_key,
+    region: 'us-east-2'
 });
 const reko_client = new AWS.Rekognition();
 
 //Google Cloud
-const { ImageAnnotatorClient } = require('@google-cloud/vision');
-const credentials = require('../assets/key.json');
-const vision_client = new ImageAnnotatorClient({ credentials });
+const vision_client = new ImageAnnotatorClient({ google_credentials });
 
 // Microsoft Azure
 const endpoint = 'https://computer-vision-api-prueba.cognitiveservices.azure.com/';

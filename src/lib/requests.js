@@ -3,11 +3,15 @@ const translate = require('@vitalets/google-translate-api');
 const AWS = require('aws-sdk');
 const aws_keys = require('../assets/key_aws.json');
 const { ImageAnnotatorClient } = require('@google-cloud/vision');
-const google_credentials = require('../assets/key.json');
+const google_keys = require('../assets/key_google.json');
 const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
 const { CognitiveServicesCredentials } = require('@azure/ms-rest-azure-js');
+const azure_keys = require('../assets/key_azure.json');
 
 //Amazon Web Services
+const aws_access_key_id = 'AKIATXTZYMA46LDSKPEM';
+const aws_secret_access_key = '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';
+const region_name = 'us-east-2';
 AWS.config.update({
     accessKeyId: aws_keys.aws_access_key_id,
     secretAccessKey: aws_keys.aws_secret_access_key,
@@ -16,12 +20,10 @@ AWS.config.update({
 const reko_client = new AWS.Rekognition();
 
 //Google Cloud
-const vision_client = new ImageAnnotatorClient({ google_credentials });
+const vision_client = new ImageAnnotatorClient({ google_keys });
 
 // Microsoft Azure
-const endpoint = 'https://computer-vision-api-prueba.cognitiveservices.azure.com/';
-const api_key = 'b3d63ad6b38c473982f5aca21a7ce948';
-const cv_client = new ComputerVisionClient(new CognitiveServicesCredentials(api_key), endpoint);
+const cv_client = new ComputerVisionClient(new CognitiveServicesCredentials(azure_keys.api_key), azure_keys.endpoint);
 
 const fetchAmazonAPI = (image) => {
     return new Promise((resolve, reject) => {

@@ -14,10 +14,10 @@ app.use(
     })
 );
 
-const fallback = (req, res) => res.sendFile('www/index.html', { root: process.cwd() });
+const fallback = (req, res) => res.sendFile('src/index.html', { root: process.cwd() });
 // Static routes
-app.use(express.static(`${__dirname}/www/assets`));
-app.use('/assets', express.static(`${process.cwd()}/www/assets`));
+app.use(express.static(`${__dirname}/src/assets`));
+app.use('/assets', express.static(`${process.cwd()}/src/assets`));
 app.use('/', fallback);
 
 

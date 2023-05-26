@@ -2,3 +2,4 @@ node_modules
 src/assets/key_aws.json
 src/assets/key_azure.json
 src/assets/key_google.json
+src/assets/key_openai.json
